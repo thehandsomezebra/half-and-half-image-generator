@@ -96,7 +96,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
                     Canvas Shape
                 </label>
-                <div class="flex bg-gray-900 p-1 rounded-lg">
+                <div class="flex bg-gray-900 p-1 rounded-lg mb-4">
                     <button onclick="setShape('square')" id="btn-shape-square" class="flex-1 py-2 text-sm rounded-md transition-all font-medium text-white bg-gray-600 shadow-sm flex flex-col items-center leading-tight">
                         <span>Square</span>
                         <span class="text-[10px] opacity-70">5000x5000</span>
@@ -105,6 +105,23 @@
                         <span>Rectangle</span>
                         <span class="text-[10px] opacity-70">8500x5000</span>
                     </button>
+                </div>
+
+                <!-- GREEN PICKER (Global) -->
+                <label class="block text-gray-200 text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-2 pt-2 border-t border-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                    Green Tone
+                </label>
+                <div class="grid grid-cols-3 gap-2">
+                    <button onclick="setGreen('#29AB87', 'Jungle')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-white text-shadow" style="background-color: #29AB87;" title="Jungle Green">Jungle</button>
+                    <button onclick="setGreen('#808000', 'Olive')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-white text-shadow" style="background-color: #808000;" title="Olive Green">Olive</button>
+                    <button onclick="setGreen('#8A9A5B', 'Sage')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-white text-shadow" style="background-color: #8A9A5B;" title="Sage Green">Sage</button>
+                    <button onclick="setGreen('#50C878', 'Emerald')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-black" style="background-color: #50C878;" title="Emerald Green">Emerald</button>
+                    <button onclick="setGreen('#98FF98', 'Mint')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-black" style="background-color: #98FF98;" title="Mint Green">Mint</button>
+                    <button onclick="setGreen('#568203', 'Avocado')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-white text-shadow" style="background-color: #568203;" title="Avocado Green">Avocado</button>
+                    <button onclick="setGreen('#004B49', 'Deep Jungle')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-white text-shadow" style="background-color: #004B49;" title="Deep Jungle Green">Deep Jungle</button>
+                    <button onclick="setGreen('#006B3C', 'Cadmium')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 ring-2 ring-white hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-white text-shadow" style="background-color: #006B3C;" title="Cadmium Green">Cadmium</button>
+                    <button onclick="setGreen('#39FF14', 'Neon')" class="color-btn h-10 rounded-lg shadow-sm border border-gray-600 hover:scale-105 transition-transform flex items-center justify-center text-[10px] font-bold text-black" style="background-color: #39FF14;" title="Neon Green">Neon</button>
                 </div>
             </div>
             
@@ -173,13 +190,19 @@
             <!-- ============================== -->
             <div id="controls-splits" class="tab-content">
                 
-                <!-- Color Swap (Splits) -->
+                <!-- Arrangement (Splits) -->
                 <div class="bg-gray-700/50 p-4 rounded-xl border border-gray-600">
-                    <label class="block text-gray-300 text-xs font-bold uppercase tracking-wider mb-3">Position</label>
-                    <button onclick="toggleInvert('splits')" id="btn-invert-splits" class="w-full py-2 text-sm rounded-md transition-all font-medium text-white bg-gray-600 hover:bg-gray-500 shadow-sm flex items-center justify-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
-                        <span id="text-invert-splits">Swap Colors</span>
-                    </button>
+                    <label class="block text-gray-300 text-xs font-bold uppercase tracking-wider mb-3">Arrangement</label>
+                    <div class="flex flex-col gap-2">
+                        <button onclick="toggleInvert('splits')" id="btn-invert-splits" class="w-full py-2 text-sm rounded-md transition-all font-medium text-white bg-gray-600 hover:bg-gray-500 shadow-sm flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                            <span id="text-invert-splits">Swap Colors</span>
+                        </button>
+                        <button onclick="toggleChaos()" id="btn-chaos" class="w-full py-2 text-sm rounded-md transition-all font-medium text-gray-400 hover:text-white bg-gray-900 border border-gray-600 hover:bg-gray-800 shadow-sm flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l5 5"/><path d="M4 4l5 5"/></svg>
+                            <span id="text-chaos">Ordered (Standard)</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Style Control (Splits) -->
@@ -253,8 +276,8 @@
                             <span id="stat-silver" class="text-gray-300 font-mono">Silver: 50%</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 rounded-full bg-[#008000]"></div> 
-                            <span id="stat-green" class="text-green-400 font-mono">Green: 50%</span>
+                            <div class="w-2 h-2 rounded-full" id="stat-green-dot" style="background-color: #50C878;"></div> 
+                            <span id="stat-green" class="font-mono" style="color: #50C878;">Green: 50%</span>
                         </div>
                         <div class="mt-1 pt-1 border-t border-gray-600 text-gray-500 font-mono" id="res-display">
                             5000 x 5000
@@ -281,30 +304,32 @@
     <script>
         // --- CONSTANTS ---
         const COLOR_SILVER = "#C0C0C0";
-        const COLOR_GREEN = "#008000";
-
+        
         // --- STATE ---
         let state = {
             width: 5000,
             height: 5000,
-            activeTab: 'dots', // 'dots' | 'splits'
+            activeTab: 'dots',
+            greenColor: '#006B3C', // Default Cadmium
+            greenName: 'Cadmium',
             
             // Polka Dots State
             dots: {
-                layout: 'grid',    // 'grid' | 'random'
-                gridStyle: 'aligned', // 'aligned' | 'staggered'
+                layout: 'grid',    
+                gridStyle: 'aligned',
                 size: 'varied',
                 count: 100,
                 spacing: 50,
-                invert: false // false = Green dots on Silver, true = Silver dots on Green
+                invert: false 
             },
 
             // Splits State
             splits: {
-                style: 'linear', // 'linear' | 'diagonal' | 'checker'
-                orient: 'vert',  // 'vert' | 'horz'
-                divisions: 2,     // 2, 4, 8, 16
-                invert: false    // Swaps colors (position)
+                style: 'linear', 
+                orient: 'vert',  
+                divisions: 2,     
+                invert: false,    
+                chaos: false      
             }
         };
 
@@ -319,6 +344,7 @@
         const resDisplay = document.getElementById('res-display');
         const statSilver = document.getElementById('stat-silver');
         const statGreen = document.getElementById('stat-green');
+        const statGreenDot = document.getElementById('stat-green-dot');
         const mathOutput = document.getElementById('math-output');
 
         // --- INITIALIZATION ---
@@ -350,6 +376,33 @@
                 previewContainer.style.aspectRatio = "8500/5000";
             }
             resDisplay.innerText = `${state.width} x ${state.height}`;
+            generateImage();
+        }
+
+        // --- COLOR LOGIC ---
+        function setGreen(hex, name) {
+            state.greenColor = hex;
+            state.greenName = name;
+            
+            // Update UI buttons styling (add/remove ring)
+            document.querySelectorAll('.color-btn').forEach(btn => {
+                if (btn.getAttribute('style').includes(hex)) {
+                    btn.classList.add('ring-2', 'ring-white');
+                } else {
+                    btn.classList.remove('ring-2', 'ring-white');
+                }
+            });
+
+            // Update Text in Swap Button
+            const dotsTxt = document.getElementById('text-invert-dots');
+            if(state.dots.invert) {
+                dotsTxt.innerText = `Silver Dots (${name} BG)`;
+                // Fix visibility for dark/light backgrounds
+                const isLight = ['Mint', 'Emerald', 'Neon'].includes(name);
+                dotsTxt.style.color = isLight ? 'black' : 'white';
+            }
+            else dotsTxt.innerText = `${name} Dots (Silver BG)`;
+
             generateImage();
         }
 
@@ -392,14 +445,19 @@
                 state.dots.invert = !state.dots.invert;
                 const btn = document.getElementById('btn-invert-dots');
                 const txt = document.getElementById('text-invert-dots');
+                const name = state.greenName;
                 if (state.dots.invert) {
-                    btn.classList.add('bg-green-700');
+                    // Button becomes green to show it's active "Green BG"
+                    btn.style.backgroundColor = state.greenColor;
                     btn.classList.remove('bg-gray-600');
-                    txt.innerText = "Silver Dots (Green BG)";
+                    txt.innerText = `Silver Dots (${name} BG)`;
+                    const isLight = ['Mint', 'Emerald', 'Neon'].includes(name);
+                    txt.style.color = isLight ? 'black' : 'white';
                 } else {
-                    btn.classList.remove('bg-green-700');
+                    btn.style.backgroundColor = '';
                     btn.classList.add('bg-gray-600');
-                    txt.innerText = "Green Dots (Silver BG)";
+                    txt.innerText = `${name} Dots (Silver BG)`;
+                    txt.style.color = 'white';
                 }
             } else {
                 state.splits.invert = !state.splits.invert;
@@ -407,8 +465,40 @@
             generateImage();
         }
 
+        function toggleChaos() {
+            state.splits.chaos = !state.splits.chaos;
+            const btn = document.getElementById('btn-chaos');
+            const txt = document.getElementById('text-chaos');
+            
+            if (state.splits.chaos) {
+                btn.classList.add('bg-purple-600', 'text-white', 'border-transparent');
+                btn.classList.remove('bg-gray-900', 'text-gray-400', 'border-gray-600');
+                txt.innerText = "Chaotic (Random Shuffle)";
+            } else {
+                btn.classList.remove('bg-purple-600', 'text-white', 'border-transparent');
+                btn.classList.add('bg-gray-900', 'text-gray-400', 'border-gray-600');
+                txt.innerText = "Ordered (Standard)";
+            }
+            generateImage();
+        }
+
         // --- RANDOMIZER ---
         function randomizeSettings() {
+            // Randomize Green
+            const greens = [
+                { hex: '#29AB87', name: 'Jungle' },
+                { hex: '#808000', name: 'Olive' },
+                { hex: '#8A9A5B', name: 'Sage' },
+                { hex: '#50C878', name: 'Emerald' },
+                { hex: '#98FF98', name: 'Mint' },
+                { hex: '#568203', name: 'Avocado' },
+                { hex: '#004B49', name: 'Deep Jungle' },
+                { hex: '#006B3C', name: 'Cadmium' },
+                { hex: '#39FF14', name: 'Neon' }
+            ];
+            const randGreen = greens[Math.floor(Math.random() * greens.length)];
+            setGreen(randGreen.hex, randGreen.name);
+
             if (state.activeTab === 'dots') {
                 const layouts = ['grid', 'random'];
                 setDotMode('layout', layouts[Math.floor(Math.random() * layouts.length)], true);
@@ -436,6 +526,10 @@
 
                 // Randomly invert colors
                 if (Math.random() > 0.5) toggleInvert('splits');
+                
+                // Randomly set chaos
+                const shouldChaos = Math.random() > 0.5;
+                if (state.splits.chaos !== shouldChaos) toggleChaos();
             }
             generateImage();
         }
@@ -529,7 +623,7 @@
                         </div>
                         <div>
                             <p class="text-gray-500">2. Target Coverage (50%)</p>
-                            <p class="font-bold text-green-400">${targetPixels.toLocaleString()} px</p>
+                            <p class="font-bold" style="color:${state.greenColor}">${targetPixels.toLocaleString()} px</p>
                         </div>
                         <div>
                             <p class="text-gray-500">3. Average Dot Area</p>
@@ -545,11 +639,16 @@
                 const divs = state.splits.divisions;
                 const style = state.splits.style;
                 const filledDivs = divs / 2;
+                const chaos = state.splits.chaos;
 
                 let logic = "";
-                if (style === 'linear') logic = `The canvas is split into ${divs} equal stripes. We fill every odd stripe (${filledDivs}/${divs}).`;
-                if (style === 'checker') logic = `The canvas is a grid of ${divs} equal cells. We fill alternating cells like a chessboard (${filledDivs}/${divs}).`;
-                if (style === 'diagonal') logic = `The canvas is a radial pie divided into ${divs} slices. We fill alternating slices (${filledDivs}/${divs}).`;
+                if (style === 'linear') logic = `The canvas is split into ${divs} equal stripes.`;
+                if (style === 'checker') logic = `The canvas is a grid of ${divs} equal cells.`;
+                if (style === 'diagonal') logic = `The canvas is a radial pie divided into ${divs} slices.`;
+                
+                let placement = chaos ? 
+                    `<span class="text-purple-400 font-bold">Chaotic Placement:</span> We randomly shuffled ${filledDivs} green pieces and ${filledDivs} silver pieces.` : 
+                    `<span class="text-gray-200 font-bold">Standard Placement:</span> We filled every alternating region strict pattern.`;
 
                 html = `
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -559,11 +658,12 @@
                         </div>
                         <div>
                             <p class="text-gray-500">2. Target Coverage (50%)</p>
-                            <p class="font-bold text-green-400">${targetPixels.toLocaleString()} px</p>
+                            <p class="font-bold" style="color:${state.greenColor}">${targetPixels.toLocaleString()} px</p>
                         </div>
                         <div class="col-span-1 md:col-span-2 border-t border-gray-700 pt-3 mt-1">
                             <p class="text-gray-500">3. Geometric Logic (${style})</p>
                             <p class="text-gray-200">${logic}</p>
+                            <p class="text-gray-400 mt-2 text-xs">${placement}</p>
                             <p class="text-purple-400 mt-1 font-bold">Result: Exactly ${filledDivs} out of ${divs} regions filled = 50%.</p>
                         </div>
                     </div>
@@ -585,7 +685,9 @@
                     const totalPixels = state.width * state.height;
                     const halfPixels = totalPixels / 2;
                     statSilver.innerText = `Silver: 50% (${halfPixels.toLocaleString()} px)`;
-                    statGreen.innerText = `Green: 50% (${halfPixels.toLocaleString()} px)`;
+                    statGreen.innerText = `${state.greenName}: 50% (${halfPixels.toLocaleString()} px)`;
+                    statGreen.style.color = state.greenColor;
+                    statGreenDot.style.backgroundColor = state.greenColor;
 
                     updateMathExplanation();
 
@@ -616,14 +718,14 @@
 
         // --- DRAWING: SPLITS ---
         function drawSplits() {
-            const { style, divisions, orient, invert } = state.splits;
+            const { style, divisions, orient, invert, chaos } = state.splits;
             const isVert = orient === 'vert';
             const w = state.width;
             const h = state.height;
             
             // Set Background and Foreground based on invert
-            const bg = invert ? COLOR_GREEN : COLOR_SILVER;
-            const fg = invert ? COLOR_SILVER : COLOR_GREEN;
+            const bg = invert ? state.greenColor : COLOR_SILVER;
+            const fg = invert ? COLOR_SILVER : state.greenColor;
 
             ctx.fillStyle = bg;
             ctx.fillRect(0, 0, w, h);
@@ -632,11 +734,33 @@
             ctx.save();
             ctx.scale(w / 5000, h / 5000);
             const LOGICAL_SIZE = 5000;
+            
+            // Pattern Generation logic for Chaos vs Order
+            let fillPattern = [];
+            const totalCount = divisions; // Logic holds for all current styles
+            
+            if (chaos) {
+                // Create bag of 50% trues and 50% falses
+                const ones = totalCount / 2;
+                const zeros = totalCount - ones;
+                for(let i=0; i<ones; i++) fillPattern.push(true);
+                for(let i=0; i<zeros; i++) fillPattern.push(false);
+                
+                // Shuffle (Fisher-Yates)
+                for (let i = fillPattern.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [fillPattern[i], fillPattern[j]] = [fillPattern[j], fillPattern[i]];
+                }
+            }
 
             if (style === 'linear') {
                 const stripeSize = LOGICAL_SIZE / divisions;
                 for (let i = 0; i < divisions; i++) {
-                    if (i % 2 === 1) { 
+                    let shouldFill = false;
+                    if (chaos) shouldFill = fillPattern[i];
+                    else shouldFill = (i % 2 === 1);
+                    
+                    if (shouldFill) { 
                         if (isVert) ctx.fillRect(i * stripeSize, 0, stripeSize, LOGICAL_SIZE);
                         else ctx.fillRect(0, i * stripeSize, LOGICAL_SIZE, stripeSize);
                     }
@@ -656,7 +780,12 @@
 
                 for (let y = 0; y < rows; y++) {
                     for (let x = 0; x < cols; x++) {
-                        if ((x + y) % 2 === 1) ctx.fillRect(x * cw, y * ch, cw, ch);
+                        const idx = y * cols + x;
+                        let shouldFill = false;
+                        if (chaos) shouldFill = fillPattern[idx];
+                        else shouldFill = ((x + y) % 2 === 1);
+
+                        if (shouldFill) ctx.fillRect(x * cw, y * ch, cw, ch);
                     }
                 }
             }
@@ -669,7 +798,11 @@
                 if (!isVert) rotationOffset += Math.PI / 2;
 
                 for (let i = 0; i < divisions; i++) {
-                    if (i % 2 === 1) {
+                    let shouldFill = false;
+                    if (chaos) shouldFill = fillPattern[i];
+                    else shouldFill = (i % 2 === 1);
+
+                    if (shouldFill) {
                         const startAngle = (i * anglePerSlice) + rotationOffset;
                         const endAngle = ((i + 1) * anglePerSlice) + rotationOffset;
                         ctx.beginPath();
@@ -691,8 +824,8 @@
             const h = state.height;
 
             // Set colors
-            const bg = invert ? COLOR_GREEN : COLOR_SILVER;
-            const dotColor = invert ? COLOR_SILVER : COLOR_GREEN;
+            const bg = invert ? state.greenColor : COLOR_SILVER;
+            const dotColor = invert ? COLOR_SILVER : state.greenColor;
 
             ctx.fillStyle = bg;
             ctx.fillRect(0, 0, w, h);
@@ -830,8 +963,9 @@
             const link = document.createElement('a');
             const type = state.activeTab === 'dots' ? 'polkadots' : state.splits.style;
             const shape = state.width === 8500 ? 'rect' : 'square';
+            const color = state.greenName.toLowerCase();
             const timestamp = new Date().toISOString().slice(0,19).replace(/:/g,"-");
-            link.download = `50-50-${shape}-${type}-${timestamp}.png`;
+            link.download = `50-50-${color}-${shape}-${type}-${timestamp}.png`;
             link.href = canvas.toDataURL('image/png', 1.0);
             document.body.appendChild(link);
             link.click();
